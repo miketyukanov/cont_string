@@ -13,6 +13,7 @@ class Father
 {
 public:
     void sayAsUsual(void) {cout<<"I usually say:"<<endl; say();}
+    virtual ~Father() = default;
 protected:
     virtual void say(void) {cout << "I am Your Father" << endl;}
 
@@ -21,6 +22,7 @@ protected:
 class Son: public Father
 {
 public:
+    virtual ~Son() = default;
 protected:
     virtual void say(void) {cout << "\tNooooooo" << endl;}
 };
@@ -29,6 +31,7 @@ class Vader
 {
 public:
     Vader() {say();}
+    virtual ~Vader() = default;
     void sayAsUsual(void) {cout<<"I usually say:"<<endl; say();}
 protected:
     virtual void say(void) {cout << "I am Your Father" << endl;}
@@ -44,6 +47,7 @@ class TalkVader
 {
 public:
     TalkVader() {cout<<"I'm Vader, in constructor ";sayAsUsual();}
+    virtual ~TalkVader() = default;
     void sayAsUsual(void) {cout<<"I usually say:"<<endl; say();}
 protected:
     virtual void say(void) {cout << "I am Your Father" << endl;}
